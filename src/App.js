@@ -7,8 +7,8 @@ import StylingRnComp from './dasar/StylingRnComp';
 const App = () => {
   return (
     <View>
-      {/* <Home />
-      <ClassFungsi /> */}
+      {/* {/* <Home /> */}
+      <ClassFungsi />
       <StylingRnComp />
     </View>
   );
