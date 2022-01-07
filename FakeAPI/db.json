@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "nama": "Ihsan Miftahul Hudad",
+      "email": "isan@gmail.com",
+      "divisi": "Fullstack Developer",
+      "id": 1
+    },
+    {
+      "nama": "Rine ",
+      "email": "rine@gmail.com",
+      "divisi": "Digital",
+      "id": 3
+    },
+    {
+      "nama": "fasdfasd",
+      "email": "asdfsadf",
+      "divisi": "asdfsaf",
+      "id": 4
+    },
+    {
+      "nama": "",
+      "email": "",
+      "divisi": "",
+      "id": 5
+    }
+  ]
+}
