@@ -32,6 +32,10 @@ json-server --watch db.json
 ```bash
 npx react-native run-android
 ```
+atau untuk ios
+```bash
+npx react-native run-ios
+```
 
 # Done :)
 
