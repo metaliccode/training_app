@@ -3,6 +3,7 @@ import React, {useState, useEffect} from 'react';
 import {
   Alert,
   Button,
+  ScrollView,
   StyleSheet,
   Text,
   TextInput,
@@ -101,58 +102,60 @@ const CrudApi = () => {
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.container}>CRUD API</Text>
-      <Text>Data Pegawai</Text>
-      <TextInput
-        placeholder="Nama Lengkap"
-        style={styles.input}
-        value={nama}
-        onChangeText={value => setNama(value)}
-      />
-      <TextInput
-        placeholder="Email"
-        style={styles.input}
-        value={email}
-        onChangeText={value => setEmail(value)}
-      />
-      <TextInput
-        placeholder="Divisi"
-        style={styles.input}
-        value={divisi}
-        onChangeText={value => setDivisi(value)}
-      />
-      <Button title={button} onPress={submit} />
-      {users.map(user => {
-        return (
-          <Item
-            key={user.id}
-            nama={user.nama}
-            email={user.email}
-            divisi={user.divisi}
-            onPress={() => selectItem(user)}
-            onDelete={() =>
-              Alert.alert(
-                'Peringatan !',
-                'Anda Yakin akan menghapus data ini ?',
-                [
-                  {
-                    text: 'Tidak',
-                    onPress: () => {
-                      console.log('btn tidak');
+    <ScrollView>
+      <View style={styles.container}>
+        <Text style={styles.container}>CRUD API</Text>
+        <Text>Data Pegawai</Text>
+        <TextInput
+          placeholder="Nama Lengkap"
+          style={styles.input}
+          value={nama}
+          onChangeText={value => setNama(value)}
+        />
+        <TextInput
+          placeholder="Email"
+          style={styles.input}
+          value={email}
+          onChangeText={value => setEmail(value)}
+        />
+        <TextInput
+          placeholder="Divisi"
+          style={styles.input}
+          value={divisi}
+          onChangeText={value => setDivisi(value)}
+        />
+        <Button title={button} onPress={submit} />
+        {users.map(user => {
+          return (
+            <Item
+              key={user.id}
+              nama={user.nama}
+              email={user.email}
+              divisi={user.divisi}
+              onPress={() => selectItem(user)}
+              onDelete={() =>
+                Alert.alert(
+                  'Peringatan !',
+                  'Anda Yakin akan menghapus data ini ?',
+                  [
+                    {
+                      text: 'Tidak',
+                      onPress: () => {
+                        console.log('btn tidak');
+                      },
                     },
-                  },
-                  {
-                    text: 'Ya',
-                    onPress: () => deleteItem(user),
-                  },
-                ],
-              )
-            }
-          />
-        );
-      })}
-    </View>
+                    {
+                      text: 'Ya',
+                      onPress: () => deleteItem(user),
+                    },
+                  ],
+                )
+              }
+            />
+          );
+        })}
+      </View>
+    </ScrollView>
   );
 };
 
